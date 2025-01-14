@@ -1,6 +1,6 @@
 # martinzubillaga
-### martinzubillaga es un repositorio del que va a alimentarse la web martinzubillaga.com
-## y esta hecho con
+### martinzubillaga is a repository that will feed the website martinzubillaga.com
+## and it is made with
 - HTML
 - CSS
-### para ver el resultado haz click [aquí](http://martinzubillaga.com)
+### to see the result click [here](http://martinzubillaga.com)
