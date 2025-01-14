@@ -5,5 +5,26 @@ body{
     background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(225,245,255,1) 100%);
 }
 .center{
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+img:active{
+    transform: rotate(0.5turn);
+    transition: 1s;
+}
+
+/* the width from h1 is 270px */
+
+
+/* helpers */
+
+.m0{
+    margin: 0;
 }
