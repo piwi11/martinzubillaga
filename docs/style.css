@@ -11,13 +11,13 @@ body{
     justify-content: center;
     align-items: center;
 }
-img:hover{
+.button:hover{
     transform: scale(1.1);
     transition: 0.5s;
 }
-img:active{
-    transform: rotate(0.5turn);
-    transition: 1s;
+.button:active{
+    transform: scale(0.9);
+    transition: 0.5s;
 }
 
 /* the width from h1 is 270px */
