@@ -1,16 +1,26 @@
 body{
-    color: darkslategray;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: black;
+    font-family: "Lato", serif;
     background: rgb(251,251,251);
     background: radial-gradient(circle, rgba(251,251,251,1) 0%, rgba(225,245,255,1) 100%);
+    margin: 0;
 }
-.center{
+
+#title-head{
+    color: darkslategray;
+}
+#center{
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.button{
+    padding: 10px 0;
+}
+
 .button:hover{
     transform: scale(1.1);
     transition: 0.5s;
@@ -25,6 +35,3 @@ body{
 
 /* helpers */
 
-.m0{
-    margin: 0;
-}
