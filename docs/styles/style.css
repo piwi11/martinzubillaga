@@ -53,10 +53,25 @@ p{
 
 #user-speaking{
     position: fixed;
-    top: 19%;
-    left: 15%;
-    width: 420px;
-    height: 400px;
+    top: 20%;
+    left: 10%;
+    width: 400px;
+    height: 380px;
+    display: none;
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+    #user-speaking {
+        display: block;
+        left: 2%;
+    }
+}
+
+@media (min-width: 1400px){
+    #user-speaking {
+        display: block;
+        left: 15%;
+    }
 }
 
 #user-speaking_image{
