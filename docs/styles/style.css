@@ -60,7 +60,7 @@ p{
     display: none;
 }
 
-@media (min-width: 1024px) and (max-width: 1400px) {
+@media (min-width: 1024px){
     #user-speaking {
         display: block;
         left: 2%;
@@ -69,7 +69,6 @@ p{
 
 @media (min-width: 1400px){
     #user-speaking {
-        display: block;
         left: 15%;
     }
 }
