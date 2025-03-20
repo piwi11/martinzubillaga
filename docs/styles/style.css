@@ -35,6 +35,7 @@ body{
 
 .button{
     padding: 10px 0;
+    height: 70px;
 }
 
 .button:hover{
