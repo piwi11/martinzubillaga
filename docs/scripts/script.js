@@ -1,25 +1,42 @@
-const gistId = "ce16440676b693f17a86e9413a32d5a5"; // ID del Gist público
+const gistId = "ce16440676b693f17a86e9413a32d5a5"; // Public Gist ID
 
 const url = `https://api.github.com/gists/${gistId}`;
 
 fetch(url)
   .then((response) => {
     if (!response.ok) {
-      throw new Error("No se pudo cargar el contenido del Gist.");
+      throw new Error("Failed to load the Gist content.");
     }
-    return response.json(); // Obtener la respuesta como JSON
+    return response.json(); // Get the response as JSON
   })
   .then((data) => {
-    // Obtener el contenido del archivo del Gist
-    const fileName = Object.keys(data.files)[0]; // Obtiene el nombre del archivo
+    // Get the content of the Gist file
+    const fileName = Object.keys(data.files)[0]; // Get the file name
     const content = data.files[fileName].content;
 
-    // Insertar el contenido en el elemento con ID "doc-content"
-    document.getElementById("doc-content").innerText = content;
+    // Call the function to display the text with a typewriter effect
+    typeWriterEffect(content, "doc-content");
   })
   .catch((error) => {
-    // Mostrar un mensaje de error si algo falla
+    // Display an error message if something goes wrong
     document.getElementById("doc-content").innerText =
-      "Error cargando el contenido.";
+      "Error loading the content.";
     console.error("Error:", error);
   });
+
+// Function for the typewriter effect
+function typeWriterEffect(text, elementId) {
+  const element = document.getElementById(elementId);
+  let index = 0;
+
+  function writeCharacter() {
+    if (index < text.length) {
+      // Use innerHTML to handle special characters correctly
+      element.innerHTML += text.charAt(index).replace(/\n/g, "<br>");
+      index++;
+      setTimeout(writeCharacter, 50); // Adjust the time to control the speed
+    }
+  }
+
+  writeCharacter();
+}
