@@ -1,25 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>Martin</title>
-        <meta name="description" content="My personal website" />
-        <link rel="icon" type="image/x-icon" href="images/m.ico">
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap">
-        <link rel="stylesheet" type="text/css" href="styles/reset.css">
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
-    </head>
-    <body>
-        <div class="center">
-            <h1 class="title-head">Martín Zubillaga</h1>
-            <img src="images/m.png" alt="Image of a m" height="150" />
-            <div class="general-items">
-                <a href="https://github.com/piwi11" target="_blank"><img src="images/image.png" alt="Icon of Gitub (link to my profile)" class="button"/></a>
-                <a href="https://codepen.io/Mart-n-Zubillaga" target="_blank"> <img src="images/codepen_img.png" alt="Icon of CodePen (link to my profile)" class="button"/> </a>
-                <a href="more-info.html" > <img src="images/more-info.gif" alt="More information button and gif" class="button"/> </a>
-            </div>
-        </div>
-    </body>
+<html lang="en">
+  <head>
+    <title>Martin</title>
+    <meta name="description" content="My personal website" />
+    <link rel="icon" type="image/x-icon" href="images/m.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900&display=swap"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="center">
+      <h1 class="title-head">Martín Zubillaga</h1>
+      <img src="images/m.png" alt="Image of an M" height="150" />
+      <div class="general-items">
+        <a href="https://github.com/piwi11" target="_blank"
+          ><img
+            src="images/image.png"
+            alt="GitHub icon (link to my profile)"
+            height="65"
+            class="button"
+        /></a>
+        <a href="more-info.html">
+          <img
+            src="images/click_info2.gif"
+            alt="More information gif"
+            height="70"
+            class="button"
+          />
+        </a>
+      </div>
+    </div>
+    <div id="user-speaking">
+      <img
+        src="images/speech-bubble.svg"
+        alt="A speech bubble with text"
+        id="user-speaking_speech_bubble"
+      />
+      <img
+        src="images/user.png"
+        alt="Image of a user speaking"
+        id="user-speaking_image"
+      />
+      <div id="user-speaking_text">
+        <p id="doc-content"></p>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
