@@ -1,8 +1,8 @@
-# martinzubillaga
+# Martinzubillaga
 
-### martinzubillaga is a repository that will feed the website martinzubillaga.com
+### Martinzubillaga is a repository that will feed the website martinzubillaga.com
 
-## and it is made with
+## And it is made with
 
 - HTML
 - CSS
