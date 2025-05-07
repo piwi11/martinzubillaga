@@ -5,13 +5,25 @@ async function main() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer YOUR_OPENAI_API_KEY`, // Replace with your API key
+        Authorization: `Bearer OPENAI_API_KEY`, // Replace with your API key
       },
       body: JSON.stringify({
-        model: "gpt-4o-mini",
+        model: "gpt-4.1-nano",
+        temperature: 1,
+        top_p: 1.0,
+        max_tokens: 70,
+        presence_penalty: 0.6,
+        frequency_penalty: 0.6,
         messages: [
-          { role: "system", content: "Talk like a pirate." },
-          { role: "user", content: "Are semicolons optional in JavaScript?" },
+          {
+            role: "system",
+            content:
+              'You have to be nice and not say anything other than what they ask you to say, for example, if they ask you to say a phrase, do not say "here comes the phrase: blah blah blah..." no no no you do not have to just say the phrase, for example "blah blah blah...". VERY VERY IMPORTANT YOU CANNOT UDER ANY CIRCUMSTANCES SAY ANYTHING THAT HAS MORE THAN 61 CHARACTERS.',
+          },
+          {
+            role: "user",
+            content: `Give me a greeting, for example: Have a nice day 😊 or something like that, and not always the same emoticon and the same phrase. You have to be a little formal. Don't use I wish you or anything related to wishes. If today is a holiday you can mention it, for example if today is Christmas you can say Merry Christmas and with the time you can also say good morning or night or whatever you want today is ${dateTime}. You can put emojis`,
+          },
         ],
       }),
     });
@@ -31,6 +43,17 @@ async function main() {
     console.error("Error fetching the response from OpenAI:", error);
   }
 }
+
+// Obtener la fecha y hora actual
+const now = new Date();
+
+// Formatear la fecha y hora
+const day = now.toLocaleDateString(); // Ejemplo: "07/05/2025"
+const time = now.toLocaleTimeString(); // Ejemplo: "14:30:15"
+
+// Combinar día y hora en una sola variable
+const dateTime = `${day} ${time}`;
+console.log("Fecha y hora actual:", dateTime);
 
 // Function for the typewriter effect
 function typeWriterEffect(text, elementId) {
