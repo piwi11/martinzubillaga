@@ -1,30 +1,46 @@
 // Main function to handle the logic
 async function main() {
   try {
+    // Load the API key from the JSON file
+    const apiKeyResponse = await fetch("OpenAI_API_KEY.json");
+    if (!apiKeyResponse.ok) {
+      throw new Error(`Error loading API key: ${apiKeyResponse.statusText}`);
+    }
+    const apiKeyData = await apiKeyResponse.json();
+    const apiKey = apiKeyData.apiKey;
+
+    // Prepare the instructions and requests
+    const model = "gpt-4.1-nano";
+    const messages = [
+      {
+        role: "system",
+        content:
+          'You have to be nice and not say anything other than what they ask you to say. For example, if they ask you to say a phrase, do not say "here comes the phrase: blah blah blah..." no no no, you just have to say the phrase, for example "blah blah blah...". VERY VERY IMPORTANT: YOU CANNOT UNDER ANY CIRCUMSTANCES SAY ANYTHING THAT HAS MORE THAN 61 CHARACTERS.',
+      },
+      {
+        role: "user",
+        content: `Give me a greeting, for example: Have a nice day 😊 or something like that, and not always the same emoticon and the same phrase. You have to be a little formal. Don't use "I wish you" or anything related to wishes. If today is a holiday, you can mention it. For example, if today is Christmas, you can say Merry Christmas, and depending on the time, you can also say good morning, good night, or whatever is appropriate. Today is ${dateTime}. You can use emojis.`,
+      },
+    ];
+
+    // Log the instructions and requests to the console
+    console.log(`Instructions and requests sent to ${model}:`, messages);
+
+    // Make the request to the OpenAI API
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer OPENAI_API_KEY`, // Replace with your API key
+        Authorization: `Bearer ${apiKey}`, // Use the loaded API key
       },
       body: JSON.stringify({
-        model: "gpt-4.1-nano",
+        model: model,
         temperature: 1,
         top_p: 1.0,
         max_tokens: 70,
         presence_penalty: 0.6,
         frequency_penalty: 0.6,
-        messages: [
-          {
-            role: "system",
-            content:
-              'You have to be nice and not say anything other than what they ask you to say, for example, if they ask you to say a phrase, do not say "here comes the phrase: blah blah blah..." no no no you do not have to just say the phrase, for example "blah blah blah...". VERY VERY IMPORTANT YOU CANNOT UDER ANY CIRCUMSTANCES SAY ANYTHING THAT HAS MORE THAN 61 CHARACTERS.',
-          },
-          {
-            role: "user",
-            content: `Give me a greeting, for example: Have a nice day 😊 or something like that, and not always the same emoticon and the same phrase. You have to be a little formal. Don't use I wish you or anything related to wishes. If today is a holiday you can mention it, for example if today is Christmas you can say Merry Christmas and with the time you can also say good morning or night or whatever you want today is ${dateTime}. You can put emojis`,
-          },
-        ],
+        messages: messages,
       }),
     });
 
@@ -44,16 +60,16 @@ async function main() {
   }
 }
 
-// Obtener la fecha y hora actual
+// Get the current date and time
 const now = new Date();
 
-// Formatear la fecha y hora
-const day = now.toLocaleDateString(); // Ejemplo: "07/05/2025"
-const time = now.toLocaleTimeString(); // Ejemplo: "14:30:15"
+// Format the date and time
+const day = now.toLocaleDateString(); // Example: "05/07/2025"
+const time = now.toLocaleTimeString(); // Example: "14:30:15"
 
-// Combinar día y hora en una sola variable
+// Combine day and time into a single variable
 const dateTime = `${day} ${time}`;
-console.log("Fecha y hora actual:", dateTime);
+console.log("Current date and time:", dateTime);
 
 // Function for the typewriter effect
 function typeWriterEffect(text, elementId) {
