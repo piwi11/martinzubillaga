@@ -13,14 +13,25 @@ async function main() {
     const gistId = "9f34944d46c0c57f60cb65f539721ea3"; // Public Gist ID
     const url = `https://api.github.com/gists/${gistId}`;
 
-    // Fetch the Gist content and extract the model
+    // Fetch the Gist content and extract the JSON data
     const gistResponse = await fetch(url);
     if (!gistResponse.ok) {
       throw new Error("Failed to load the Gist content.");
     }
     const gistData = await gistResponse.json();
     const fileName = Object.keys(gistData.files)[0]; // Get the file name
-    const model = gistData.files[fileName].content;
+    const fileContent = gistData.files[fileName].content;
+
+    // Parse the JSON content from the Gist
+    const gistJson = JSON.parse(fileContent);
+    const {
+      model,
+      temperature,
+      top_p,
+      max_tokens,
+      presence_penalty,
+      frequency_penalty,
+    } = gistJson; // Destructure the JSON
 
     const messages = [
       {
@@ -34,8 +45,9 @@ async function main() {
       },
     ];
 
-    // Log the instructions and requests to the console
+    // Log the instructions, requests, and additional data to the console
     console.log(`Instructions and requests sent to ${model}:`, messages);
+    console.log("Additional data from Gist JSON:", gistJson);
 
     // Make the request to the OpenAI API
     const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -46,11 +58,11 @@ async function main() {
       },
       body: JSON.stringify({
         model: model,
-        temperature: 1,
-        top_p: 1.0,
-        max_tokens: 70,
-        presence_penalty: 1,
-        frequency_penalty: 1,
+        temperature: temperature,
+        top_p: top_p,
+        max_tokens: max_tokens,
+        presence_penalty: presence_penalty,
+        frequency_penalty: frequency_penalty,
         messages: messages,
       }),
     });
