@@ -6,5 +6,6 @@
 
 - HTML
 - CSS
+- JavaScript
 
 ### To see the result click [here](http://martinzubillaga.com)
