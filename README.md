@@ -1,11 +1,13 @@
-# Martinzubillaga
+# martinzubillaga.com
 
-### Martinzubillaga is a repository that will feed the website martinzubillaga.com
+### Martinzubillaga is a repository that feeds the website martinzubillaga.com
 
-## And it is made with
+### This repository is the structure of the hosting. For the moment, the website is in the www folder, but there will be more websites in other folder working in the same hosting but in subdomains.
+
+## It is made with
 
 - HTML
 - CSS
 - JavaScript
 
-### To see the result click [here](http://martinzubillaga.com)
+### To see the principal page (www) click [here](https://martinzubillaga.com)
