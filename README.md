@@ -11,3 +11,15 @@
 - JavaScript
 
 ### To see the principal page (www) click [here](https://martinzubillaga.com)
+
+## Structure of the hosting:
+
+```mermaid
+graph TD;
+    martinzubillaga.com-->www;
+    www-->index.html;
+    www-->more-info.html;
+    www-->styles;
+    www-->scripts;
+    www-->images;
+```
