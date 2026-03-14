@@ -22,4 +22,7 @@ graph TD;
     www-->styles;
     www-->scripts;
     www-->images;
+    www-->404
+    404-->index.html;
+    404-->style.css;
 ```
