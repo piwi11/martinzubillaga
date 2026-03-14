@@ -22,4 +22,5 @@ graph TD;
     www-->styles;
     www-->scripts;
     www-->images;
+    www-->404
 ```
