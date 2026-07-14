@@ -16,6 +16,13 @@
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
   </head>
   <body>
+    <div class="bg-decor" aria-hidden="true">
+      <div class="bg-blob bg-blob-1"></div>
+      <div class="bg-blob bg-blob-2"></div>
+      <div class="bg-blob bg-blob-3"></div>
+      <div class="bg-dots"></div>
+      <div class="bg-veil"></div>
+    </div>
     <div class="center">
       <h1 class="title-head"><a href="index.html">Martín Zubillaga</a></h1>
       <img src="images/m.png" alt="Image of an M" height="150" />
@@ -24,37 +31,35 @@
           ><img
             src="images/image.png"
             alt="GitHub icon (link to my profile)"
-            height="65"
-            class="button"
+            height="70"
+            class="button chip"
         /></a>
         <a href="more-info.html">
           <img
             src="images/more-info.gif"
             alt="More information gif"
             height="70"
-            class="button"
+            class="button gif"
           />
         </a>
         <a href="https://codepen.io/Mart-n-Zubillaga" target="_blank">
           <img
             src="images/codepen_img.png"
             alt="Icon of CodePen (link to my profile)"
-            class="button"
+            height="70"
+            class="button chip"
           />
         </a>
       </div>
     </div>
     <div id="user-speaking">
-      <img
-        src="images/speech-bubble.svg"
-        alt="A speech bubble with text"
-        id="user-speaking_speech_bubble"
-      />
-      <img
-        src="images/user.png"
-        alt="Image of a user speaking"
-        id="user-speaking_image"
-      />
+      <div id="user-speaking_icon">
+        <img
+          src="images/cat-icon.png"
+          alt="Minimalist line-art cat"
+          id="user-speaking_image"
+        />
+      </div>
       <div id="user-speaking_text">
         <p id="doc-content"></p>
       </div>
