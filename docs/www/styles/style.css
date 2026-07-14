@@ -227,6 +227,11 @@ body {
   border-radius: 16px;
 }
 
+.m-image {
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
 p {
   font-size: 1.5em;
   color: rgb(225, 220, 230);
