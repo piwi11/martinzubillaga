@@ -68,6 +68,19 @@
   }
 }
 
+@keyframes title-head-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-1px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateX(1px) rotate(0.5deg);
+  }
+}
+
 body {
   color: rgb(240, 240, 245);
   font-family: "Lato", serif;
@@ -167,10 +180,20 @@ body {
 
 .title-head {
   color: rgb(240, 240, 245);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  font-family:
+    "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   padding: 0 0 20px 0;
   font-size: 2em;
+}
+
+.title-head:hover {
+  animation: title-head-shake 0.8s ease-in-out infinite;
+}
+
+.title-head:hover > a {
+  color: rgb(74, 156, 207);
+  transition: color 0.5s ease;
 }
 
 .title-head > a {
