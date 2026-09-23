@@ -28,7 +28,7 @@ any static file server (e.g. `python3 -m http.server` from `docs/www/`).
   weight/style utility classes; `styles/reset.css` is a standard CSS reset.
   Both `index.html` and `more-info.html` share this single stylesheet.
 - `docs/www/scripts/script.js` — on `index.html`, fetches a public GitHub
-  Gist (hardcoded `gistId`) and renders its content into `#doc-content`
+  Gist (hardcoded `gistId`) and renders its content into `#cat-message-content`
   using a character-by-character typewriter effect.
 - `docs/www/scripts/more-info.js` — same typewriter effect, but with a
   hardcoded local string instead of fetching remote content, rendered into
@@ -40,6 +40,6 @@ any static file server (e.g. `python3 -m http.server` from `docs/www/`).
 
 ## Content changes
 
-The "speaking" text on the home page is *not* edited in this repo — it's
+The text below the cat on the home page is *not* edited in this repo — it's
 pulled live from an external GitHub Gist referenced by `gistId` in
 `scripts/script.js`.

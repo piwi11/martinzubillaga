@@ -15,11 +15,11 @@ fetch(url)
     const content = data.files[fileName].content;
 
     // Call the function to display the text with a typewriter effect
-    typeWriterEffect(content, "doc-content");
+    typeWriterEffect(content, "cat-message-content");
   })
   .catch((error) => {
     // Display an error message if something goes wrong
-    document.getElementById("doc-content").innerText =
+    document.getElementById("cat-message-content").innerText =
       "Error loading the content.";
     console.error("Error:", error);
   });
